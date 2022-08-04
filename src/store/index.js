@@ -2,11 +2,13 @@ import {createStore} from "vuex";
 import menu from "@/store/modules/menu";
 import vuexAlong from "vuex-along";
 import user from "@/store/modules/user";
+import doctor from "@/store/modules/doctor";
 
 const store = createStore({
     modules:{
         menu,
-        user
+        user,
+        doctor
     },
     plugins: [vuexAlong({
         name: 'navTree',
