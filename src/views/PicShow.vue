@@ -21,7 +21,7 @@
     <el-table  ref="multipleTableRef" :data="movies"  style="width: 100%" >
       <el-table-column prop="id" label="图片编号" width="80" align="center" />
       <el-table-column prop="title" label="图片标题" width="250" align="center"/>
-      <el-table-column prop="describe" label="图片副标题" width="250" align="center" />
+      <el-table-column prop="subtitle" label="图片副标题" width="250" align="center" />
       <el-table-column prop="url" label="地址"  align="center"/>
       <el-table-column label="操作" width="250" align="center">
         <template #default="scope">
