@@ -1,5 +1,4 @@
 <template>
-
     <el-scrollbar id="left_bar">
       <div id="left_div">
         <div id="left_title">
