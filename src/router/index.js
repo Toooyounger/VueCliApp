@@ -6,6 +6,7 @@ import yongHuGuanli from "@/views/yongHuGuanli";
 import role from "@/views/role";
 import detp from "@/views/detp";
 import picShow from "@/views/PicShow";
+import Doctor from "@/views/Doctor";
 
 const routes=[
     {
@@ -58,6 +59,14 @@ const routes=[
                     name: '  /  轮播图  /  轮播图管理'
                 },
                 component: picShow,
+            },
+            {
+                path: 'sys/doctor',
+                name: 'doctor',
+                meta:{
+                    name: '  /  系统管理  /  医生管理'
+                },
+                component: Doctor
             },
         ]
     },
