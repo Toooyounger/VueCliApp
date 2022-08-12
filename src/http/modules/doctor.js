@@ -10,7 +10,7 @@ export function getDoctorMsg(url,params){
 }
 
 export function deleteDoctor(url,params){
-    return post(url,params);
+    return get(url,params);
 }
 
 export function updateDoctor(url,params){

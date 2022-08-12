@@ -113,19 +113,23 @@ export default {
         name: "",
         position: "",
         skill: "",
-        seeing: ""
+        seeing: "",
+        doctor_hospital:{hospital_name:""},
       }],
       header: {token: sessionStorage.getItem("token")},
       myHeaders: {Authorization: token},
-      selectId: "",
-      updateMsg: [{
+      obj:{
+        selectId:""
+      },
+      updateMsg: {
         doctorId: "",
-        hospitalId: "",
+        hospitalId:"",
         doctorName: "",
         position: "",
         skill: "",
         selectId:"",
-      }]
+        doctor_hospital:{hospital_name:""}
+      }
     }
   },
   methods: {
@@ -140,27 +144,30 @@ export default {
       console.log(this.insertDoctorForm);
       this.$api.doctor.insertMsg("doctor/insertMsg", this.insertDoctorForm)
           .then(res => {
+           this.doctorMsg.push(this.insertDoctorForm)
             console.log(res);
           })
     },
     handleSelect(selection, row) {
-      this.selectId = row.doctorId;
+      this.obj.selectId = row.doctorId;
+      console.log(row.doctorId);
+
       this.updateMsg = row;
-      console.log(this.selectId);
-      console.log(this.updateMsg);
-      console.log(this.updateMsg.doctor_hospital.hospital_name);
+      this.updateMsg.selectId=row.doctorId;
+      this.updateMsg.hospitalId = row.doctor_hospital.hospital_name;
+      console.log("选择后updateMsg中的数据："+this.updateMsg);
       // this.stateArr.push.apply(selection.id);
       // console.log("stateArr的数据："+this.stateArr);
     },
     deleteDoctor() {
-      this.$api.doctor.deleteDoctor("doctor/deleteMsg", this.selectId)
+      console.log(this.obj.selectId);
+      this.$api.doctor.deleteDoctor("doctor/deleteMsg", this.obj)
           .then(res => {
             console.log(res);
           })
     },
     updateDoctor() {
-      this.updateMsg.selectId=this.selectId;
-      console.log(this.updateMsg);
+      console.log("修改后updateMsg中的数据：",this.updateMsg);
       this.$api.doctor.updateDoctor("doctor/updateMsg",this.updateMsg)
       .then(res=>{
         console.log(res);
