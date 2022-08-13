@@ -48,7 +48,7 @@
           <el-upload
               v-model:file-list="fileList"
               class="upload-demo"
-              action="http://localhost:8090/uploadPic"
+              action="http://47.95.223.172:8080/uploadPic"
               multiple
               :limit="3"
               :headers="myHeaders"
@@ -105,7 +105,7 @@ export default {
       dialogFormVisible:false,
       myHeaders:{Authorization:token},
       uploadPic:null,
-      serverUrl: 'http://47.95.223.172:8090/uploadPic',
+      serverUrl: 'http://47.95.223.172:8080/uploadPic',
       header: {token: sessionStorage.getItem("token")},
       digTitle:'',
       movies:[],
@@ -159,7 +159,7 @@ export default {
           this.dialogFormVisible=false;
         })
       }else {
-        if (this.currentPic.title==null||this.currentPic.id==null||this.currentPic.subtitle==null||this.fileList.length==0){
+        if (this.currentPic.title==null||this.currentPic.id==null||this.currentPic.subtitle==null){
           ElNotification.warning({
             title: '警告',
             message: '请补全信息',

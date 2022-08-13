@@ -24,6 +24,8 @@
 
 </template>
 <script>
+import {ElNotification} from "element-plus";
+
 export default {
   name: "LoginPage",
   data(){
@@ -85,8 +87,17 @@ export default {
     },
     sign_up(){
       console.log("开始注册");
-      console.log(this.signUpForm.username);
-      console.log(this.signUpForm.password);
+      if (this.signUpForm.password!=this.signUpForm.confPassWord){
+        ElNotification.warning({
+          title: '警告',
+          message: '两次输入的密码不一致，请重新输入',
+          showClose: true,
+        })
+      }else {
+        this.loginForm.username=this.signUpForm.username;
+        this.loginForm.password=this.signUpForm.password;
+        this.$api.SignUp.signUp('/signUp',this.loginForm);
+      }
     }
   }
 }
