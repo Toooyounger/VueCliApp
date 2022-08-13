@@ -17,7 +17,7 @@
     </div>
 
     <div class="next">
-      <el-button type="primary" :icon="User" plain  :disabled="!hasPerms('sys:user:view')">新增</el-button>
+      <el-button type="primary" :icon="User" plain  :disabled="!hasPerms('sys:user:view')" @click="addnewUser">新增</el-button>
       <el-button type="success" :icon="Search" plain>修改</el-button>
       <el-button type="warning" :icon="Search" plain>删除</el-button>
       <el-button type="danger" :icon="Search" plain>导出</el-button>
@@ -76,7 +76,12 @@ export default {
   data(){
     return{
       input:'',
-      aaa:'Avatar'
+      aaa:'Avatar',
+      name:'aaaa',
+      newUser:{
+        name:'huangj',
+        password:'bbb'
+      }
     }
   },
   methods:{
@@ -84,6 +89,13 @@ export default {
       // 根据权限标识和外部指示状态进行权限判断
       return hasPermission(perms)
     },
+    addnewUser(){
+      console.log(this.newUser.name);
+      console.log(this.newUser.password);
+      this.$api.user.newUser('/addUser',this.newUser).then(res=>{
+        console.log(res);
+      })
+    }
   }
 }
 </script>

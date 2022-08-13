@@ -3,10 +3,10 @@ import * as role from "@/http/modules/role";
 import * as menu from "@/http/modules/menu";
 import * as user from "@/http/modules/user";
 import * as Carousel from "@/http/modules/Carousel"
-
+import * as SignUp from "@/http/modules/SignUp"
 import * as aricle from "@/http/modules/aricle"
-
 import * as doctor from "@/http/modules/doctor"
+
 
 export default {
     login,
@@ -14,9 +14,8 @@ export default {
     menu,
     user,
     Carousel,
-
+    SignUp
     aricle,
-
     doctor
 
 }
