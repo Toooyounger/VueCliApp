@@ -14,7 +14,7 @@
       轮播图信息管理
       <div class="next">
         <el-button type="primary" :icon="Plus" plain  @click="dialogFormVisible = true" @mouseenter="clear()">新增</el-button>
-        <el-button type="danger" :icon="Bottom" plain @click="info">导出</el-button>
+        <el-button type="danger" :icon="Bottom" plain @click="info"  disabled>导出</el-button>
       </div>
     </div>
   <div id="tab">
@@ -56,7 +56,7 @@
             <el-button type="primary">上传图片</el-button>
             <template #tip>
               <div class="el-upload__tip">
-                图片大小请不要超过500KB
+                图片大小请不要超过10MB
               </div>
             </template>
           </el-upload>
@@ -82,7 +82,6 @@ import { Plus,Bottom} from '@element-plus/icons-vue'
 import  { ElTable } from 'element-plus'
 
 
-
 </script>
 
 <script >
@@ -102,10 +101,11 @@ export default {
         username:'sas',
         password:'12123',
       },
+      fileList:[],
       dialogFormVisible:false,
       myHeaders:{Authorization:token},
       uploadPic:null,
-      serverUrl: 'http://localhost:8090/uploadPic',
+      serverUrl: 'http://47.95.223.172:8090/uploadPic',
       header: {token: sessionStorage.getItem("token")},
       digTitle:'',
       movies:[],
@@ -159,7 +159,7 @@ export default {
           this.dialogFormVisible=false;
         })
       }else {
-        if (this.currentPic.title==null||this.currentPic.id==null||this.currentPic.subtitle==null){
+        if (this.currentPic.title==null||this.currentPic.id==null||this.currentPic.subtitle==null||this.fileList.length==0){
           ElNotification.warning({
             title: '警告',
             message: '请补全信息',
@@ -170,6 +170,7 @@ export default {
         this.dialogFormVisible=false;
         this.$api.Carousel.newPic('/newPic',this.currentPic).then((res)=>{
           console.log(res);
+          this.movies.push(res);
           ElNotification.success({
             title: '成功',
             message: '已成功添加新的轮播图',

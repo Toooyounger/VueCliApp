@@ -10,6 +10,9 @@ import aricleList from "@/views/aricleList";
 import aricleIssue from "@/views/aricleIssue";
 import aricleIssue1 from "@/views/aricleIssue1";
 
+import Doctor from "@/views/Doctor";
+
+
 const routes=[
     {
         path:'/',
@@ -85,6 +88,14 @@ const routes=[
                     name: '  /  轮播图  /  轮播图管理'
                 },
                 component: picShow,
+            },
+            {
+                path: 'sys/doctor',
+                name: 'doctor',
+                meta:{
+                    name: '  /  系统管理  /  医生管理'
+                },
+                component: Doctor
             },
         ]
     },
