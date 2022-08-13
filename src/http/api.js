@@ -14,7 +14,7 @@ export default {
     menu,
     user,
     Carousel,
-    SignUp
+    SignUp,
     aricle,
     doctor
 
