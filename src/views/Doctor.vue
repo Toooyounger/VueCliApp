@@ -13,7 +13,7 @@
     <el-button type="info" @click="updateForm=true" class="outButton">修改</el-button>
     <el-button type="danger" @click="deleteDoctor()" class="outButton">删除</el-button>
 
-    <div>
+    <div class="FormModel">
       <el-dialog title="增加医生" v-model="insertForm">
         <el-form :model="insertDoctorForm">
           <el-form-item label="id:" :label-width="formLabelWidth">
@@ -33,7 +33,7 @@
           </el-form-item>
           <el-upload
               v-model:file-list="fileList"
-              class="upload-demo"
+              class="PicButton"
               action="http://localhost:8090/doctor/uploadAvatar"
               list-type="picture"
               :headers="myHeaders"
@@ -48,10 +48,11 @@
 
         </el-form>
         <el-button type="primary" @click="insertDoctor()" class="insideButton">保存</el-button>
+        <el-button type="danger" @click="insertForm=false" class="insideButton">取消</el-button>
       </el-dialog>
     </div>
 
-    <div>
+    <div class="FormModel">
       <el-dialog title="修改信息" v-model="updateForm">
         <el-form :model="updateMsg">
           <el-form-item label="id:" :label-width="formLabelWidth">
@@ -71,7 +72,7 @@
           </el-form-item>
           <el-upload
               v-model:file-list="fileList"
-              class="upload-demo"
+              class="PicButton"
               action="http://localhost:8090/doctor/uploadAvatar"
               list-type="picture"
               :headers="myHeaders"
@@ -86,6 +87,7 @@
 
         </el-form>
         <el-button type="primary" @click="updateDoctor()" class="insideButton">保存</el-button>
+        <el-button type="danger" @click="updateForm=false" class="insideButton">取消</el-button>
       </el-dialog>
     </div>
 
@@ -215,6 +217,14 @@ export default {
 
 .insideButton {
   margin-top: 5px;
-  margin-left: 30px;
+  margin-left: 100px;
+}
+
+.PicButton{
+  margin-left: 130px;
+}
+
+.FormModel{
+  width: 150px;
 }
 </style>
