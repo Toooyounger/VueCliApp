@@ -6,6 +6,12 @@ import yongHuGuanli from "@/views/yongHuGuanli";
 import role from "@/views/role";
 import detp from "@/views/detp";
 import picShow from "@/views/PicShow";
+import aricleList from "@/views/aricleList";
+import aricleIssue from "@/views/aricleIssue";
+import aricleIssue1 from "@/views/aricleIssue1";
+
+import Doctor from "@/views/Doctor";
+
 
 const routes=[
     {
@@ -19,6 +25,11 @@ const routes=[
         component: backView,
         redirect:'/backView/shouYe',
         children: [
+            {
+                path:'/aricleIssue1',
+                name:"aricleIssue1",
+                component:aricleIssue1,
+            },
             {
                 path: 'shouYe',
                 name: 'shouYe',
@@ -52,12 +63,39 @@ const routes=[
                 component: detp,
             },
             {
+                path: 'sys/aricleList',
+                name: 'aricleList',
+                meta: {
+                    name: '  /  文章管理  /  文章列表'
+                },
+                component: aricleList,
+                children: [
+
+                ]
+            },
+            {
+                path: 'sys/aricleIssue',
+                name: 'aricleIssue',
+                meta: {
+                    name: '  /  文章管理  /  文章发布'
+                },
+                component: aricleIssue,
+            },
+            {
                 path: 'pic/control',
                 name: 'PicControl',
                 meta: {
                     name: '  /  轮播图  /  轮播图管理'
                 },
                 component: picShow,
+            },
+            {
+                path: 'sys/doctor',
+                name: 'doctor',
+                meta:{
+                    name: '  /  系统管理  /  医生管理'
+                },
+                component: Doctor
             },
         ]
     },
