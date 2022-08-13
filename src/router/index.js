@@ -11,6 +11,7 @@ import aricleIssue from "@/views/aricleIssue";
 import aricleIssue1 from "@/views/aricleIssue1";
 
 import Doctor from "@/views/Doctor";
+import Hospital from "@/views/Hospital";
 
 
 const routes=[
@@ -96,6 +97,16 @@ const routes=[
                     name: '  /  系统管理  /  医生管理'
                 },
                 component: Doctor
+
+            },
+            {
+                path: 'sys/hospital',
+                name: 'Hospital',
+                meta:{
+                    name: '  /  系统管理  /  医院管理'
+                },
+                component: Hospital
+
             },
         ]
     },

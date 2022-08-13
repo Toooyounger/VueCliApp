@@ -6,6 +6,7 @@ import * as Carousel from "@/http/modules/Carousel"
 import * as SignUp from "@/http/modules/SignUp"
 import * as aricle from "@/http/modules/aricle"
 import * as doctor from "@/http/modules/doctor"
+import * as hospital from "@/http/modules/Hospital"
 
 
 export default {
@@ -14,8 +15,8 @@ export default {
     menu,
     user,
     Carousel,
-    SignUp
+    SignUp,
     aricle,
-    doctor
-
+    doctor,
+    hospital
 }
