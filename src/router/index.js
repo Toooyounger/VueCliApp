@@ -7,6 +7,8 @@ import role from "@/views/role";
 import detp from "@/views/detp";
 import picShow from "@/views/PicShow";
 import Doctor from "@/views/Doctor";
+import Programlist from "@/views/KaiZhanXiangMu"
+
 
 const routes=[
     {
@@ -67,6 +69,14 @@ const routes=[
                     name: '  /  系统管理  /  医生管理'
                 },
                 component: Doctor
+            },
+            {
+                path: 'sys/programlist',
+                name: 'Programlist',
+                meta: {
+                    name: '  /  开展项目  /  项目列表'
+                },
+                component: Programlist,
             },
         ]
     },
