@@ -9,8 +9,8 @@ import picShow from "@/views/PicShow";
 import aricleList from "@/views/aricleList";
 import aricleIssue from "@/views/aricleIssue";
 import aricleIssue1 from "@/views/aricleIssue1";
-
 import Doctor from "@/views/Doctor";
+import EditProgram from "@/views/editProgram";
 
 
 const routes=[
@@ -96,6 +96,14 @@ const routes=[
                     name: '  /  系统管理  /  医生管理'
                 },
                 component: Doctor
+            },
+            {
+                path: 'sys/programedit',
+                name:'programEdit',
+                meta: {
+                    name:'  /  开展项目  /  项目编辑'
+                },
+                component: EditProgram,
             },
         ]
     },

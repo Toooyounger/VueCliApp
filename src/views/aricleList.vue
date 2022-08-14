@@ -206,7 +206,7 @@ export default {
       this.$api.aricle.getAricleContent('/aricle/getAricleContent',{'id':row.id})
           .then(res=>{
             console.log(res);
-            this.content=res[0]
+            this.content=res[0].replace(/<.+?>/g, '').replace(/&nbsp;/ig, '');
           }).catch(err=>{
         console.log(err);
       })
