@@ -11,7 +11,7 @@ import aricleIssue from "@/views/aricleIssue";
 import aricleIssue1 from "@/views/aricleIssue1";
 import Doctor from "@/views/Doctor";
 import EditProgram from "@/views/editProgram";
-
+import Programlist from "@/views/KaiZhanXiangMu"
 
 const routes=[
     {
@@ -96,6 +96,14 @@ const routes=[
                     name: '  /  系统管理  /  医生管理'
                 },
                 component: Doctor
+            },
+            {
+                path: 'sys/programlist',
+                name: 'Programlist',
+                meta: {
+                    name: '  /  开展项目  /  项目列表'
+                },
+                component: Programlist,
             },
             {
                 path: 'sys/programedit',

@@ -7,7 +7,7 @@ import * as SignUp from "@/http/modules/SignUp"
 import * as aricle from "@/http/modules/aricle"
 import * as doctor from "@/http/modules/doctor"
 import * as setPro from "@/http/modules/setPro";
-
+import * as program from "@/http/modules/program"
 export default {
     login,
     role,
@@ -18,4 +18,5 @@ export default {
     aricle,
     doctor,
     setPro,
+    program
 }
