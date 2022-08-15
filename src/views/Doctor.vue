@@ -14,8 +14,8 @@
     <el-button type="danger" @click="deleteDoctor()" class="outButton">删除</el-button>
 
     <div class="FormModel">
-      <el-dialog title="增加医生" v-model="insertForm">
-        <el-form :model="insertDoctorForm">
+      <el-dialog title="增加医生" v-model="insertForm" width="430px">
+        <el-form :model="insertDoctorForm" label-position="top">
           <el-form-item label="id:" :label-width="formLabelWidth">
             <el-input v-model="insertDoctorForm.doctorId" autocomplete="off"></el-input>
           </el-form-item>
@@ -53,8 +53,8 @@
     </div>
 
     <div class="FormModel">
-      <el-dialog title="修改信息" v-model="updateForm">
-        <el-form :model="updateMsg">
+      <el-dialog title="修改信息" v-model="updateForm" width="430px">
+        <el-form :model="updateMsg" label-position="top">
           <el-form-item label="id:" :label-width="formLabelWidth">
             <el-input v-model="updateMsg.doctorId" autocomplete="off"></el-input>
           </el-form-item>
@@ -217,11 +217,10 @@ export default {
 
 .insideButton {
   margin-top: 5px;
-  margin-left: 100px;
+  margin-left: 75px;
 }
 
 .PicButton{
-  margin-left: 130px;
 }
 
 .FormModel{
